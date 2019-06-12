@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage("Build") {
 	  steps {
-	    sh "mvn clean pmd:pmd"
+	    sh "mvn clean install pmd:pmd"
 	    echo  "hello world!"
 	  }
 	}
@@ -16,6 +16,7 @@ pipeline {
   post {
     always {
 	  pmd(canRunOnFailed: true,pattern:'**/target/pmd.xml')
+	  junit testResults: '**/target/surefire-reports/*.xml'
 	}
   }
 }
