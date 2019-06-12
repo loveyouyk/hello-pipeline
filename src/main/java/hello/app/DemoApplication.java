@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoApplication {
 
 
-    @GetMapping("/")
+    @GetMapping("/hello")
     public String home() {
-        return "hello world pipeline";
+        return "hello world";
     }
 
     public static void main(String[] args) {
