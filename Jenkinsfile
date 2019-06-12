@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage("Build") {
 	  steps {
-	    sh "mvn clean install pmd:pmd"
+	    sh "mvn clean test pmd:pmd"
 	    echo  "hello world!"
 	  }
 	}
